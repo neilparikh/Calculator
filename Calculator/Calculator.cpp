@@ -8,7 +8,9 @@ using namespace std;
 
 int main()
 {
-
+int i;
+i=10;
+while (i==10) {
 //Declaration of variables
 
 float a;
@@ -45,7 +47,13 @@ float answer;
 
 //Output of answer
 
+	cout<< a;
+	cout<<"+";
+	cout<< b;
+	cout<< "=";
 	cout<< answer;
+	cout<< endl << "--------------------------------------------------------------------------------";
 	cin.ignore();
 	cin.get();
+}
 }
