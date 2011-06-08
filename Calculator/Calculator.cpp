@@ -15,6 +15,7 @@ while (i==10) {
 
 float a;
 int operation;
+const char* symbol;
 float b;
 float answer;
 
@@ -45,10 +46,28 @@ float answer;
 		answer = a / b;
 	}
 
+//Changes output
+
+	if (operation == 1) {
+		symbol = "+";
+	}
+
+	if (operation == 2) {
+		symbol = "-";
+	}
+
+	if (operation == 3) {
+		symbol = "*";
+	}
+
+	if (operation == 4) {
+		symbol = "/";
+	}
+
 //Output of answer
 
 	cout<< a;
-	cout<<"+";
+	cout<< symbol;
 	cout<< b;
 	cout<< "=";
 	cout<< answer;
