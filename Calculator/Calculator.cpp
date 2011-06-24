@@ -10,19 +10,28 @@ int main()
 {
 int i;
 i=10;
-while (i==10) {
 //Declaration of variables
-
-float a;
+double a;
 int operation;
+char previousvalue;
+previousvalue = 'n';
 const char* symbol;
-float b;
-float answer;
+double b;
+double answer = 0;
+
+while (i==10) {
 
 //This section asks for user input.
 
-	cout<< "Enter the first value" << endl;
-	cin>> a;
+	if (previousvalue == 'n') {
+		cout<< "Enter the first value" << endl;
+		cin>> a;
+	}
+	
+	if (previousvalue =='y') {
+		a = answer;
+	}
+
 	cout<< "Chose an operation:" << endl << "1-Addition" << endl << "2-Subtraction" << endl << "3-Multiplication" << endl << "4-Division" << endl;
 	cin>> operation;
 	cout<< "Enter the second value" << endl;
@@ -71,8 +80,8 @@ float answer;
 	cout<< b;
 	cout<< "=";
 	cout<< answer;
-	cout<< endl << "--------------------------------------------------------------------------------";
-	cin.ignore();
-	cin.get();
+	cout<< endl << "Would you like to use this value for your next calculation? <y/n>";
+	cin>> previousvalue;
+	cout<< "--------------------------------------------------------------------------------";
 }
 }
