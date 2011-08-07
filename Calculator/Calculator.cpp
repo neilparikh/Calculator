@@ -2,7 +2,9 @@
 //
 
 #include "stdafx.h"
+#include <cstdlib>
 #include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -13,23 +15,24 @@ i=10;
 //Declaration of variables
 double a;
 int operation;
-char previousvalue;
-previousvalue = 'n';
+string previousvalue = "No";
+string quit = "no";
 const char* symbol;
 double b;
 double answer = 0;
 
-while (i==10) {
+while (quit == "no" || quit == "No") {
 
 //This section asks for user input.
 
-	if (previousvalue == 'n') {
+	if (previousvalue == "no" || previousvalue == "No") {
 		cout<< "Enter the first value" << endl;
 		cin>> a;
 	}
 	
-	if (previousvalue =='y') {
+	if (previousvalue =="yes" || previousvalue == "Yes") {
 		a = answer;
+		cout<< "Enter the first value" << endl << a  << endl;
 	}
 
 	cout<< "Chose an operation:" << endl << "1-Addition" << endl << "2-Subtraction" << endl << "3-Multiplication" << endl << "4-Division" << endl;
@@ -80,8 +83,24 @@ while (i==10) {
 	cout<< b;
 	cout<< "=";
 	cout<< answer;
-	cout<< endl << "Would you like to use this value for your next calculation? <y/n>";
+	
+	//Asks if you want to quit or use the answer for the next operation
+
+	cout<< endl << "Would you like to quit?";
+	cin>> quit;
+	while (quit != "Yes" && quit != "yes" && quit != "No" && quit != "no") {
+		cout<< "Enter a proper choice. ";
+		cin>> quit;
+	}
+	if (quit == "yes" || quit == "Yes")
+		break;
+	cout<< "Would you like to use this value for your next calculation? ";
 	cin>> previousvalue;
-	cout<< "--------------------------------------------------------------------------------";
+	while (previousvalue != "Yes" && previousvalue != "yes" && previousvalue != "No" && previousvalue != "no") {
+		cout<< "Enter a proper choice. ";
+		cin>> previousvalue;
+	}
+	system("cls");
+	//cout<< "--------------------------------------------------------------------------------";
 }
 }
