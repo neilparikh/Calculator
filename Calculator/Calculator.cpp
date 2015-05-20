@@ -64,14 +64,14 @@ int main() {
 		
 		//Asks if you want to quit or use the answer for the next operation
 
-		cout << "\nWould you like to quit? ";
+		cout << "\nWould you like to quit? (yes/no) ";
 		cin >> quit;
 		while (quit != "Yes" && quit != "yes" && quit != "No" && quit != "no") {
 			cout << "Enter a proper choice. ";
 			cin >> quit;
 		}
 		if (quit == "yes" || quit == "Yes") break;
-		cout << "Would you like to use this value for your next calculation? ";
+		cout << "Would you like to use this value for your next calculation? (yes/no) ";
 		cin >> previousvalue;
 		while (previousvalue != "Yes" && previousvalue != "yes" && previousvalue != "No" && previousvalue != "no") {
 			cout << "Enter a proper choice. ";
